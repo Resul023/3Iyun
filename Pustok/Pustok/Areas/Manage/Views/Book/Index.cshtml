@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+@model BookViewModel
+<container>
+    <row>
+        <div class="col-md-10 mx-auto">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">FullName</th>
+                        <th scope="col">CostPrice</th>
+                        <th scope="col">SalePrice</th>
+                        <th scope="col">AuthorName</th>
+                        <th scope="col">Genre</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @for (int i = 0; i < Model.Books.Count; i++)
+                    {
+                         <tr>
+                             <th scope="col">@Model.Books[i].Name</th>
+                             <th scope="col">@Model.Books[i].CostPrice</th>
+                             <th scope="col">@Model.Books[i].SalePrice</th>
+                             <th scope="col">@Model.Books[i].Author.FullName</th>
+                             <th scope="col">@Model.Books[i].Genre.Name</th>
+
+                         </tr>
+
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </row>
+</container>
+
+
